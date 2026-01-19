@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment</title>
+</head>
+
+<body>
+    <h1>Experiment 1</h2>
+    <h2>How to open the console </br>
+        </br>
+        For Mac Users </br>
+        1. Press fn + F12 </br>
+        2. Right click the page and press inspect </br>
+        </br>
+        For Windows Users </br>
+        1. Press F12 </br>
+        2. Right click the page and press inspect
+        
+    </h2>
+
+    <script>
+        //This program asks user to write a random sentence all in lower case, than it gives an output making each letter of each word capitalized.
+        
+        var string = prompt("write a lowercase sentence, it can be random!");
+        var text = "";
+        //Below is my loop.
+
+        for (var i = 0; i < string.length ; i++) {
+            if (i === 0 || string[i - 1] === " ") {
+                text = text + string[i].toUpperCase();
+            } else {
+                text = text + string[i];
+            }
+        }
+        console.log (text);
+    </script>
+
+</body>
