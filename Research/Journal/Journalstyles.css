@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  background: #000;
-  color: #f2f2f2;
+  background: #ffffff;
+  color: #000000;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -24,7 +24,7 @@ header p {
 }
 
 header a {
-  color: #00ff78;
+  color: #00aa55;
   text-decoration: none;
 }
 
@@ -40,8 +40,8 @@ main {
 article {
   width: 850px;
   margin: 0 auto;
-  background: #111;
-  border: 2px solid #00ff78;
+  background: #ffffff;
+  border: 2px solid #00aa55;
   padding: 18px;
 }
 
@@ -58,7 +58,7 @@ article p {
 }
 
 article a {
-  color: #00ff78;
+  color: #00aa55;
   text-decoration: none;
 }
 
@@ -71,7 +71,7 @@ footer {
   display: flex;
   justify-content: space-between;
   font-size: 14px;
-  color: #cccccc;
+  color: #000000;
 }
 
 footer p {
@@ -79,7 +79,7 @@ footer p {
 }
 
 footer a {
-  color: #cccccc;
+  color: #000000;
   text-decoration: none;
 }
 
