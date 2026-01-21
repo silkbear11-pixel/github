@@ -73,6 +73,28 @@ article a:hover {
   text-decoration: underline;
 }
 
+.sketch {
+  margin: 0 auto;
+  width: 900px;
+  max-width: 100%;
+  border: 2px solid #00aa55;
+  border-radius: 14px;
+  padding: 12px;
+  background: #ffffff;
+}
+
+.sketch img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.sketch figcaption {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
 footer {
   margin-top: 30px;
   display: flex;
