@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiment 2</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 40px;
+      line-height: 1.4;
+    }
+
+    .card {
+      max-width: 760px;
+      padding: 24px;
+      border: 2px solid rgba(0, 0, 0, 0.15);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    ul {
+      margin-top: 8px;
+    }
+
+    .hint {
+      opacity: 0.75;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1 id="title">Experiment 2</h1>
+    <p class="hint" id="hintText"></p>
+
+    <h2 id="greeting"></h2>
+    <p id="sentenceOut"></p>
+
+    <h3 id="listTitle"></h3>
+    <ul id="listOut"></ul>
+
+    <p id="closing"></p>
+  </div>
+
+  <script>
+    /* This program uses prompt() to collect user input, then uses multiple functions (with returns) to change the page using the DOM: it formats the user's sentence, changes the background color, and generates a short randomized list based on the user's input.*/
+
+    function randomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function toTitleCase(lowercaseSentence) {
+      var result = "";
+      for (var i = 0; i < lowercaseSentence.length; i++) {
+        if (i === 0 || lowercaseSentence[i - 1] === " ") {
+          result = result + lowercaseSentence[i].toUpperCase();
+        } else {
+          result = result + lowercaseSentence[i];
+        }
+      }
+      return result;
+    }
+
+    function pickBackgroundColor(userChoice, colors) {
+      var choice = userChoice.toLowerCase();
+      var chosenColor = "";
+
+      for (var i = 0; i < colors.length; i++) {
+        if (choice === colors[i].name) {
+          chosenColor = colors[i].value;
+        }
+      }
+
+      if (chosenColor === "") {
+        chosenColor = colors[randomInt(0, colors.length - 1)].value;
+      }
+
+      return chosenColor;
+    }
+
+    function buildRandomList(items, count) {
+      var list = [];
+      var limit = count;
+
+      if (limit < 1) {
+        limit = 1;
+      }
+
+      if (limit > 5) {
+        limit = 5;
+      }
+
+      for (var i = 0; i < limit; i++) {
+        list.push(items[randomInt(0, items.length - 1)]);
+      }
+
+      return list;
+    }
+
+    function renderResults(formattedSentence, bgColor, listItems) {
+      document.body.style.backgroundColor = bgColor;
+
+      var greetingEl = document.getElementById("greeting");
+      var sentenceEl = document.getElementById("sentenceOut");
+      var listTitleEl = document.getElementById("listTitle");
+      var listEl = document.getElementById("listOut");
+      var closingEl = document.getElementById("closing");
+      var hintEl = document.getElementById("hintText");
+
+      hintEl.textContent = "Refresh the page to try again.";
+
+      greetingEl.textContent = "Your Sentence, Cleaned Up";
+      sentenceEl.textContent = formattedSentence;
+
+      listTitleEl.textContent = "Random Picks For You";
+      listEl.innerHTML = "";
+
+      for (var i = 0; i < listItems.length; i++) {
+        var li = document.createElement("li");
+        li.textContent = listItems[i];
+        listEl.appendChild(li);
+      }
+
+      closingEl.textContent = "Done. Your page changed using JavaScript and the DOM.";
+    }
+
+    var colors = [
+      { name: "red", value: "#ff4d4d" },
+      { name: "yellow", value: "#ffe066" },
+      { name: "green", value: "#63e6be" },
+      { name: "blue", value: "#4dabf7" }
+    ];
+
+    var picks = [
+      "Try a quick walk outside",
+      "Drink water",
+      "Take a 5 minute stretch break",
+      "Grab a snack",
+      "Write one small goal for today",
+      "Organize one folder on your desktop",
+      "Message a friend hello",
+      "Watch one short tutorial",
+      "Clean one small area",
+      "Play one quick game"
+    ];
+
+    var userSentence = prompt("Write a lowercase sentence, it can be random!");
+    if (userSentence === null) {
+      userSentence = "i cancelled the prompt";
+    }
+
+    var userColor = prompt("Pick a background color: red, yellow, green, or blue");
+    if (userColor === null) {
+      userColor = "";
+    }
+
+    var formatted = toTitleCase(userSentence);
+    var bg = pickBackgroundColor(userColor, colors);
+
+    var wordCount = 0;
+    var trimmed = userSentence.trim();
+
+    if (trimmed.length === 0) {
+      wordCount = 1;
+    } else {
+      wordCount = 1;
+      for (var i = 0; i < trimmed.length; i++) {
+        if (trimmed[i] === " ") {
+          wordCount = wordCount + 1;
+        }
+      }
+    }
+
+    var listToShow = buildRandomList(picks, wordCount);
+
+    renderResults(formatted, bg, listToShow);
+  </script>
+</body>
+
+</html>
