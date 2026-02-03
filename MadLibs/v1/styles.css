@@ -20,6 +20,11 @@ body {
   font-weight: 400;
 }
 
+.hidden {
+  display: none;
+}
+
+/* INPUT VIEW */
 .frame {
   width: 1200px;
   height: 750px;
@@ -105,4 +110,46 @@ input[type="number"]:focus {
 .create-btn:focus {
   outline: 2px solid #000;
   outline-offset: 3px;
+}
+
+/*OUTPUT VIEW */
+.output {
+  width: 1200px;
+  height: 750px;
+  margin: 0 auto;
+  padding: 70px 80px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 28px;
+}
+
+.output-title {
+  margin: 0;
+  text-align: center;
+  font-size: 56px;
+  font-weight: 700;
+}
+
+.story-box {
+  background: #dff5c7;
+  border: 3px solid #000;
+  border-radius: 36px;
+  padding: 44px 52px;
+}
+
+.story {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.user-word {
+  text-decoration: underline;
+  font-weight: 800;
+}
+
+.user-photo {
+  justify-self: center;
+  display: block;
 }
