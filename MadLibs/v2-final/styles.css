@@ -1,0 +1,189 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
+  background: #fff;
+}
+
+.site-header {
+  padding: 18px 0 8px;
+}
+
+.site-header h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 44px;
+  font-weight: 400;
+}
+
+.hidden {
+  display: none;
+}
+
+/* INPUT VIEW */
+
+.frame {
+  width: 1200px;
+  height: 750px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.left-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-panel h2 {
+  margin: 0;
+  font-size: 44px;
+  font-weight: 400;
+}
+
+.right-panel {
+  border-left: 2px solid #000;
+  padding: 70px 90px 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-panel h3 {
+  margin: 0 0 40px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.inputs li {
+  margin-bottom: 16px;
+}
+
+label {
+  display: inline-block;
+  font-size: 18px;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 140px;
+  border: 0;
+  border-bottom: 2px solid #000;
+  background: transparent;
+  padding: 6px 2px 4px;
+  font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: 0;
+  border-bottom: 3px solid #000;
+}
+
+.create-btn {
+  margin-top: auto;
+  align-self: flex-end;
+  width: 200px;
+  height: 54px;
+  border: 0;
+  background: #d9d9d9;
+  font-size: 30px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.create-btn:focus {
+  outline: 2px solid #000;
+  outline-offset: 3px;
+}
+
+/* OUTPUT VIEW */
+
+.output {
+  width: 1200px;
+  height: 750px;
+  margin: 0 auto;
+  position: relative;
+  padding: 55px 60px 40px;
+
+  background-image: url("images/campus2.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.output::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.output-title,
+.story-box,
+.again-btn {
+  position: relative;
+}
+
+.output-title {
+  margin: 0 0 24px;
+  text-align: center;
+  font-size: 56px;
+  font-weight: 700;
+}
+
+.story-box {
+  width: 1020px;
+  height: 360px;
+  margin: 0 auto;
+
+  background: #dff5c7;
+  border: 3px solid #000;
+  border-radius: 40px;
+  padding: 44px 52px;
+}
+
+#madlib {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.user-word {
+  font-weight: 700;
+  color: #0b4fb3;
+}
+
+.again-btn {
+  display: block;
+  width: 220px;
+  height: 54px;
+  margin: 28px auto 0;
+  border: 0;
+  background: #d9d9d9;
+  font-size: 26px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.again-btn:focus {
+  outline: 2px solid #000;
+  outline-offset: 3px;
+}
