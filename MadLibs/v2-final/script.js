@@ -30,9 +30,10 @@
     madlib.innerHTML = myText;
 
     // inputPage.classList.add("hidden");
+    // outputPage.classList.remove("hidden");
     inputPage.style.display = 'none';
     outputPage.style.display = 'block';
-    // outputPage.classList.remove("hidden");
+    
   });
 
   againBtn.addEventListener("click", function () {
