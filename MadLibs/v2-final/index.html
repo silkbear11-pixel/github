@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MadLibs</title>
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
   <script src="script.js" defer></script>
 </head>
@@ -15,7 +14,7 @@
     <h1 class="stage-title">MadLibs</h1>
 
     <!-- INPUT VIEW -->
-    <section id="inputPage" class="frame" aria-label="Mad Libs input page">
+    <section id="inputPage" class="frame">
       <section class="left-panel">
         <h2>Campus Chaos</h2>
         <p class="tagline">Fill it out, then see your story.</p>
@@ -28,42 +27,42 @@
           <ol class="inputs">
             <li>
               <label for="noun1">Object you carry</label>
-              <input type="text" id="noun1" required placeholder="backpack">
+              <input type="text" id="noun1" required>
             </li>
 
             <li>
               <label for="noun2">Another object</label>
-              <input type="text" id="noun2" required placeholder="coffee">
+              <input type="text" id="noun2" required>
             </li>
 
             <li>
               <label for="noun3">Something that can fall apart</label>
-              <input type="text" id="noun3" required placeholder="notebook">
+              <input type="text" id="noun3" required>
             </li>
 
             <li>
               <label for="adj1">Adjective (how you feel)</label>
-              <input type="text" id="adj1" required placeholder="stressed">
+              <input type="text" id="adj1" required>
             </li>
 
             <li>
               <label for="adj2">Adjective (how the campus looks)</label>
-              <input type="text" id="adj2" required placeholder="quiet">
+              <input type="text" id="adj2" required>
             </li>
 
             <li>
               <label for="verbing">Verb ending in ing (what you saw)</label>
-              <input type="text" id="verbing" required placeholder="running">
+              <input type="text" id="verbing" required>
             </li>
 
             <li>
               <label for="place1">Where you are going</label>
-              <input type="text" id="place1" required placeholder="lecture hall">
+              <input type="text" id="place1" required>
             </li>
 
             <li>
               <label for="place2">Where you arrived</label>
-              <input type="text" id="place2" required placeholder="classroom">
+              <input type="text" id="place2" required>
             </li>
 
             <li>
@@ -78,7 +77,7 @@
     </section>
 
     <!-- OUTPUT VIEW -->
-    <section id="outputPage" class="output" style="display:none;" aria-label="Mad Libs output page">
+    <section id="outputPage" class="output" style="display:none;">
       <h2 class="output-title">Campus Chaos</h2>
 
       <article class="story-box">

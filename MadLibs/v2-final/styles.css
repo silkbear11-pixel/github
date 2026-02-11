@@ -35,7 +35,7 @@ body {
 
 .frame {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 40% 60%;
   background-image: url("images/input.png"); /* Edited through feedback from TA Zahra Baxi */
   background-size: cover;
   background-position: center;
@@ -53,11 +53,21 @@ body {
   margin: 0;
   font-size: 44px;
   font-weight: 400;
+
+  background: rgba(255, 255, 255, 0.7);
+  padding: 10px 16px;
+  border-radius: 12px;
+  display: inline-block;
 }
 
 .tagline {
   margin: 12px 0 0;
   font-size: 18px;
+
+  background: rgba(255, 255, 255, 0.7);
+  padding: 10px 16px;
+  border-radius: 12px;
+  display: inline-block;
 }
 
 .right-panel {
@@ -71,14 +81,21 @@ body {
   margin: 0 0 16px;
   text-align: center;
   font-size: 40px;
-  font-weight: 400;
+  font-weight: 700;
+  color: #000;
+
+  background: rgba(255, 255, 255, 0.7);
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 12px;
+  align-self: center;
 }
 
 form {
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.85); /* Edited through feedback from TA Zahra Baxi */
+  background: rgba(255, 255, 255, 0.92); /* Edited through feedback from TA Zahra Baxi */
   border: 2px solid #000; /* Edited through feedback from TA Zahra Baxi */
   border-radius: 24px;
   padding: 18px 22px;
@@ -89,18 +106,25 @@ form {
   padding-left: 22px;
 }
 
-.inputs li { margin-bottom: 10px; }
+.inputs li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
 
 label {
   display: inline-block;
   font-size: 16px;
+  color: #000;
+  width: 260px;
 }
 
 input[type="text"],
 input[type="number"] {
-  width: 180px;
+  width: 220px;
   border: 0;
-  border-bottom: 2px solid #000;
+  border-bottom: 3px solid #000;
   background: transparent;
   padding: 6px 2px 4px;
   font-size: 16px;
