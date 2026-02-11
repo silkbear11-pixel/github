@@ -29,19 +29,13 @@
 
     madlib.innerHTML = myText;
 
-    // inputPage.classList.add("hidden");
-    // outputPage.classList.remove("hidden");
-    inputPage.style.display = 'none';
-    outputPage.style.display = 'block';
-    
+    inputPage.style.display = "none"; /* Edited through feedback from TA Giang Le*/
+    outputPage.style.display = "block"; /* Edited through feedback from TA Giang Le */
   });
 
   againBtn.addEventListener("click", function () {
-    // outputPage.classList.add("hidden");
-    // inputPage.classList.remove("hidden");
-
-    inputPage.style.display = 'grid';
-    outputPage.style.display = 'none';
+    inputPage.style.display = "grid"; /* Edited through feedback from TA Giang Le */
+    outputPage.style.display = "none"; /* Edited through feedback from TA Giang Le */
 
     myForm.reset();
     document.querySelector("#noun1").focus();

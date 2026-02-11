@@ -1,43 +1,52 @@
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
 
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  color: #000;
-  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.site-header {
-  padding: 18px 0 8px;
+.stage {
+  width: 1200px; /* Edited through feedback from Professor Glenda Drew */
+  height: 750px; /* Edited through feedback from Professor Glenda Drew */
+  overflow: hidden; /* Edited through feedback from Professor Glenda Drew */
 }
 
-.site-header h1 {
+.stage-title {
   margin: 0;
-  text-align: center;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 44px;
   font-weight: 400;
 }
 
-.hidden {
-  display: none;
+.frame,
+.output {
+  width: 1200px; /* Edited through feedback from Professor Glenda Drew */
+  height: calc(750px - 90px); /* Edited through feedback from Professor Glenda Drew */
+  overflow: hidden;
 }
 
-/* INPUT VIEW */
-
 .frame {
-  width: 1200px;
-  height: 750px;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  background-image: url("images/input.png"); /* Edited through feedback from TA Zahra Baxi */
+  background-size: cover;
+  background-position: center;
 }
 
 .left-panel {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding: 40px;
 }
 
 .left-panel h2 {
@@ -46,15 +55,20 @@ body {
   font-weight: 400;
 }
 
+.tagline {
+  margin: 12px 0 0;
+  font-size: 18px;
+}
+
 .right-panel {
   border-left: 2px solid #000;
-  padding: 70px 90px 60px;
+  padding: 50px 70px 40px;
   display: flex;
   flex-direction: column;
 }
 
 .right-panel h3 {
-  margin: 0 0 40px;
+  margin: 0 0 16px;
   text-align: center;
   font-size: 40px;
   font-weight: 400;
@@ -64,6 +78,10 @@ form {
   flex: 1;
   display: flex;
   flex-direction: column;
+  background: rgba(255, 255, 255, 0.85); /* Edited through feedback from TA Zahra Baxi */
+  border: 2px solid #000; /* Edited through feedback from TA Zahra Baxi */
+  border-radius: 24px;
+  padding: 18px 22px;
 }
 
 .inputs {
@@ -71,18 +89,16 @@ form {
   padding-left: 22px;
 }
 
-.inputs li {
-  margin-bottom: 16px;
-}
+.inputs li { margin-bottom: 10px; }
 
 label {
   display: inline-block;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 input[type="text"],
 input[type="number"] {
-  width: 140px;
+  width: 180px;
   border: 0;
   border-bottom: 2px solid #000;
   background: transparent;
@@ -108,41 +124,15 @@ input[type="number"]:focus {
   cursor: pointer;
 }
 
-.create-btn:focus {
-  outline: 2px solid #000;
-  outline-offset: 3px;
-}
-
-/* OUTPUT VIEW */
-
 .output {
-  width: 1200px;
-  height: 750px;
-  margin: 0 auto;
-  position: relative;
-  padding: 55px 60px 40px;
-
+  padding: 24px 60px 30px;
   background-image: url("images/campus2.jpg");
   background-size: cover;
   background-position: center;
-  overflow: hidden;
-}
-
-.output::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.55);
-}
-
-.output-title,
-.story-box,
-.again-btn {
-  position: relative;
 }
 
 .output-title {
-  margin: 0 0 24px;
+  margin: 0 0 16px;
   text-align: center;
   font-size: 56px;
   font-weight: 700;
@@ -150,13 +140,12 @@ input[type="number"]:focus {
 
 .story-box {
   width: 1020px;
-  height: 360px;
+  height: 320px;
   margin: 0 auto;
-
   background: #dff5c7;
   border: 3px solid #000;
   border-radius: 40px;
-  padding: 44px 52px;
+  padding: 34px 44px;
 }
 
 #madlib {
@@ -175,15 +164,10 @@ input[type="number"]:focus {
   display: block;
   width: 220px;
   height: 54px;
-  margin: 28px auto 0;
+  margin: 18px auto 0;
   border: 0;
   background: #d9d9d9;
   font-size: 26px;
   font-weight: 400;
   cursor: pointer;
-}
-
-.again-btn:focus {
-  outline: 2px solid #000;
-  outline-offset: 3px;
 }
