@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Desk</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <main class="stage">
+    <header class="header">
+      <h1>My Desk</h1>
+      <p class="intro">Explore my desk and guess their value.</p>
+    </header>
+
+    <section class="gallery">
+      <button class="thumb" type="button" data-full="images/desk1.jpg" data-alt="Desk photo 1">
+        <img src="images/desk1.jpg" alt="Desk photo 1">
+      </button>
+
+      <button class="thumb" type="button" data-full="images/desk2.jpg" data-alt="Desk photo 2">
+        <img src="images/desk2.jpg" alt="Desk photo 2">
+      </button>
+
+      <button class="thumb" type="button" data-full="images/desk3.jpg" data-alt="Desk photo 3">
+        <img src="images/desk3.jpg" alt="Desk photo 3">
+      </button>
+
+      <button class="thumb" type="button" data-full="images/desk4.jpg" data-alt="Desk photo 4">
+        <img src="images/desk4.jpg" alt="Desk photo 4">
+      </button>
+
+      <button class="thumb" type="button" data-full="images/desk5.jpg" data-alt="Desk photo 5">
+        <img src="images/desk5.jpg" alt="Desk photo 5">
+      </button>
+    </section>
+
+    <footer class="footer">
+      <p>Click any image to open it.</p>
+    </footer>
+  </main>
+
+  <div class="overlay hidden">
+    <div class="overlay-panel">
+      <button class="close" type="button">Close</button>
+
+      <figure class="overlay-figure">
+        <img class="overlay-img" src="" alt="">
+        <figcaption class="caption">
+          <p>This desk is more than gear. The budget spent on this setup returns in greater value through time saving, lower stress, stronger focus, and everyday comfort. Look closely and guess which details matter most.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
