@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Desk</title>
+
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>My Desk</h1>
+    <p>Explore my desk and guess their value.</p>
+  </header>
+
+  <main>
+    <section aria-label="Desk photos">
+      <h2 class="visually-hidden">Gallery</h2>
+
+      <ul class="gallery">
+        <li>
+          <a href="#view-desk1" class="thumb">
+            <img src="images/desk1.jpg" width="1200" height="657" alt="Wide view of my desk setup">
+          </a>
+        </li>
+
+        <li>
+          <a href="#view-desk2" class="thumb">
+            <img src="images/desk2.jpg" width="1200" height="560" alt="Close view of keyboard and mouse on the desk">
+          </a>
+        </li>
+
+        <li>
+          <a href="#view-desk3" class="thumb">
+            <img src="images/desk3.jpg" width="1000" height="750" alt="Desk setup in bright lighting">
+          </a>
+        </li>
+
+        <li>
+          <a href="#view-desk4" class="thumb">
+            <img src="images/desk4.jpg" width="1000" height="750" alt="Close view of monitor showing a page on screen">
+          </a>
+        </li>
+
+        <li>
+          <a href="#view-desk5" class="thumb">
+            <img src="images/desk5.jpg" width="931" height="750" alt="Desk setup at night with colorful monitor lighting">
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="caption-block" aria-label="Project caption">
+      <h2 class="visually-hidden">Caption</h2>
+      <p>This desk is more than gear. The budget spent on this setup returns in greater value through time saved, lower stress, stronger focus, and everyday comfort. Look closely and guess which details matter most.</p>
+    </section>
+
+    <section class="overlay is-hidden" aria-label="Expanded image view">
+      <h2 class="visually-hidden">Overlay</h2>
+
+      <article class="overlay-panel" id="view-desk1">
+        <p class="overlay-note">To preview the overlay styling, remove the class is-hidden from section.overlay in the HTML.</p>
+        <img src="images/desk1.jpg" width="1200" height="657" alt="Wide view of my desk setup">
+        <p>This desk is more than gear. The budget spent on this setup returns in greater value through time saved, lower stress, stronger focus, and everyday comfort. Look closely and guess which details matter most.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>HTML and CSS only version.</p>
+  </footer>
+</body>
+</html>
