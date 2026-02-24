@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Desk</title>
+
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main class="stage">
+    <header>
+      <h1>My Desk</h1>
+      <p class="intro">Explore my desk and guess their value.</p>
+    </header>
+
+    <section class="gallery">
+      <button class="thumb" type="button" data-index="0">
+        <img src="images/desk1.jpg" alt="Wide view of my desk setup">
+      </button>
+
+      <button class="thumb" type="button" data-index="1">
+        <img src="images/desk2.jpg" alt="Close view of the keyboard and mouse on the desk">
+      </button>
+
+      <button class="thumb" type="button" data-index="2">
+        <img src="images/desk3.jpg" alt="Desk setup in bright lighting">
+      </button>
+
+      <button class="thumb" type="button" data-index="3">
+        <img src="images/desk4.jpg" alt="Close view of a monitor showing a page on screen">
+      </button>
+
+      <button class="thumb" type="button" data-index="4">
+        <img src="images/desk5.jpg" alt="Desk setup at night with colorful monitor lighting">
+      </button>
+    </section>
+
+    <section class="project-caption">
+      <p>
+        This desk is more than gear. The budget spent on this setup returns in greater value through time saved, lower stress, stronger focus, and everyday comfort. Look closely and guess which details matter most.
+      </p>
+    </section>
+
+    <footer>
+      <p class="footer-note">Click an image to open. Move your mouse over the large image to explore.</p>
+    </footer>
+  </main>
+
+  <section class="overlay hide">
+    <div class="panel">
+      <button class="close" type="button">Close</button>
+
+      <figure>
+        <div class="viewer" id="viewer">
+          <img id="bigimg" src="" alt="">
+        </div>
+
+        <figcaption>
+          <p id="cap">This desk is more than gear. The budget spent on this setup returns in greater value through time saved, lower stress, stronger focus, and everyday comfort. Look closely and guess which details matter most.</p>
+          <p class="tip" id="tip">Tip: Move your mouse left to right on the image.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+</body>
+</html>
