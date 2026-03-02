@@ -56,7 +56,6 @@
     overlay.classList.add('hide');
     bigimg.src = '';
     bigimg.alt = '';
-    cap.textContent = 'write captions here';
 
     tip.style.display = 'none';
     clearTimeout(tipTimer);
