@@ -1,0 +1,132 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  background: #fff;
+}
+
+.stage {
+  width: 1200px;
+  height: 750px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #000;
+}
+
+.topbar {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #000;
+}
+
+.topbar h1 {
+  flex: 1;
+  margin: 0;
+  text-align: center;
+  font-size: 36px;
+}
+
+.right {
+  width: 260px;
+  display: flex;
+  justify-content: center;
+  padding-right: 20px;
+}
+
+.pill {
+  display: inline-block;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 18px;
+  background: #d9d9d9;
+  color: #000;
+  text-decoration: none;
+  font-size: 28px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.tablewrap {
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 30px;
+}
+
+.table {
+  width: 760px;
+  height: 260px;
+  background: #58a85f;
+  border-radius: 0 0 420px 420px;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#game img {
+  width: 90px;
+  margin: 0 20px;
+}
+
+.bottomrow {
+  height: 240px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.scorebox {
+  width: 300px;
+  height: 220px;
+  border: 1px solid #000;
+  padding: 10px 20px;
+}
+
+.scorebox h2 {
+  margin: 0;
+  text-align: center;
+  font-size: 40px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 10px;
+}
+
+.scorebox p {
+  font-size: 36px;
+  margin: 24px 0;
+  text-align: center;
+}
+
+.messagebox {
+  flex: 1;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#status {
+  font-size: 44px;
+  margin: 0;
+  text-align: center;
+}
+
+.actionbox {
+  width: 300px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+}
+
+.actionbox .pill {
+  width: 240px;
+  margin-left: 0;
+}
