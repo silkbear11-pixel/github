@@ -49,25 +49,6 @@ body {
   margin-left: 20px;
 }
 
-.tablewrap {
-  height: 320px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 30px;
-}
-
-.table {
-  width: 760px;
-  height: 260px;
-  background: #58a85f;
-  border-radius: 0 0 420px 420px;
-  box-shadow: 0 6px 10px rgba(0,0,0,0.25);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 #game img {
   width: 90px;
   margin: 0 20px;
