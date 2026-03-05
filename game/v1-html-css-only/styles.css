@@ -29,29 +29,52 @@ body {
   font-size: 36px;
 }
 
-.right {
-  width: 260px;
-  display: flex;
-  justify-content: center;
-  padding-right: 20px;
-}
-
 .pill {
   display: inline-block;
   padding: 14px 28px;
-  border: none;
   border-radius: 18px;
   background: #d9d9d9;
   color: #000;
   text-decoration: none;
   font-size: 28px;
-  cursor: pointer;
   margin-left: 20px;
+  border: 1px solid #000;
 }
 
-#game img {
+.tablewrap {
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 30px;
+}
+
+.table {
+  width: 760px;
+  height: 260px;
+  background: #58a85f;
+  border: 1px solid #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.diceholder {
+  display: flex;
+  gap: 30px;
+}
+
+.die {
   width: 90px;
-  margin: 0 20px;
+  height: 90px;
+  background: #fff;
+  border: 1px solid #000;
+}
+
+.bigstart {
+  font-size: 40px;
+  padding: 18px 60px;
 }
 
 .bottomrow {
@@ -91,7 +114,7 @@ body {
   align-items: center;
 }
 
-#status {
+.status {
   font-size: 44px;
   margin: 0;
   text-align: center;
@@ -107,7 +130,23 @@ body {
   align-items: center;
 }
 
-.actionbox .pill {
+.actionbtn {
   width: 240px;
+  text-align: center;
   margin-left: 0;
+}
+
+.rules {
+  padding: 20px;
+}
+
+.rules h2 {
+  margin: 0 0 10px 0;
+  font-size: 40px;
+}
+
+.rules p {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  line-height: 1.6;
 }

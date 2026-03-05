@@ -6,7 +6,6 @@
   <title>Game of Pig</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
-  <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -16,32 +15,33 @@
     <div class="topbar">
       <a class="pill" href="indexhome.html">Home</a>
       <h1>Game of Pig</h1>
-
-      <div class="right">
-        <button id="quit" class="pill">Quit</button>
-      </div>
+      <a class="pill" href="index.html">Reset</a>
     </div>
 
     <div class="tablewrap">
       <div class="table">
-        <div id="game"></div>
+        <div class="diceholder">
+          <div class="die"></div>
+          <div class="die"></div>
+        </div>
       </div>
     </div>
 
     <div class="bottomrow">
 
-      <div id="score" class="scorebox">
+      <div class="scorebox">
         <h2>Score</h2>
         <p>P1: 0</p>
         <p>P2: 0</p>
       </div>
 
       <div class="messagebox">
-        <p id="status">Press Roll to begin.</p>
+        <p class="status">Press Roll to begin.</p>
       </div>
 
-      <div id="actions" class="actionbox">
-        <button id="roll" class="pill">Roll</button>
+      <div class="actionbox">
+        <a class="pill actionbtn" href="#">Roll</a>
+        <a class="pill actionbtn" href="#">Pass</a>
       </div>
 
     </div>
