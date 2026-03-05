@@ -6,6 +6,9 @@
   const overlay = document.querySelector('.overlay');
   const closeBtn = document.querySelector('.close');
 
+  const prevBtn = document.querySelector('#prev');
+  const nextBtn = document.querySelector('#next');
+
   const viewer = document.querySelector('#viewer');
   const bigimg = document.querySelector('#bigimg');
   const cap = document.querySelector('#cap');
@@ -27,20 +30,28 @@
     'Night mode.'
   ];
 
-  let startIndex = 0;
-  let prevIndex = 0;
+  let currentIndex = 0;
   let tipTimer;
+  let zoomOn = false;
+
+  function resetZoom() {
+    bigimg.classList.remove('zoomed');
+    bigimg.style.transformOrigin = '50% 50%';
+    zoomOn = false;
+  }
 
   function setView(idx) {
-    bigimg.src = photos[idx];
-    bigimg.alt = 'Desk photo ' + (idx + 1);
-    cap.textContent = captions[idx];
+    currentIndex = idx;
+
+    bigimg.src = photos[currentIndex];
+    bigimg.alt = 'Desk photo ' + (currentIndex + 1);
+
+    cap.textContent = captions[currentIndex];
+
+    resetZoom();
   }
 
   function openOverlay(idx) {
-    startIndex = idx;
-    prevIndex = idx;
-
     setView(idx);
     overlay.classList.remove('hide');
 
@@ -54,8 +65,11 @@
 
   function closeOverlay() {
     overlay.classList.add('hide');
+
     bigimg.src = '';
     bigimg.alt = '';
+
+    resetZoom();
 
     tip.style.display = 'none';
     clearTimeout(tipTimer);
@@ -82,28 +96,40 @@
     }
   });
 
-  viewer.addEventListener('mousemove', function (event) {
+  prevBtn.addEventListener('click', function (event) {
+    event.stopPropagation();
+
+    let idx = currentIndex - 1;
+    if (idx < 0) { idx = photos.length - 1; }
+    setView(idx);
+  });
+
+  nextBtn.addEventListener('click', function (event) {
+    event.stopPropagation();
+
+    let idx = currentIndex + 1;
+    if (idx > photos.length - 1) { idx = 0; }
+    setView(idx);
+  });
+
+//needs some more improvement. I want to have it zoom in like a magnifying glass.
+  viewer.addEventListener('click', function (event) {
     if (overlay.classList.contains('hide')) { return; }
 
     const box = viewer.getBoundingClientRect();
     const x = event.clientX - box.left;
-    const percent = x / box.width;
+    const y = event.clientY - box.top;
 
-    let idx = Math.floor(percent * photos.length);
+    const xPercent = (x / box.width) * 100;
+    const yPercent = (y / box.height) * 100;
 
-    if (idx < 0) { idx = 0; }
-    if (idx > photos.length - 1) { idx = photos.length - 1; }
-
-    if (idx !== prevIndex) {
-      setView(idx);
-      prevIndex = idx;
+    if (!zoomOn) {
+      bigimg.style.transformOrigin = xPercent + '% ' + yPercent + '%';
+      bigimg.classList.add('zoomed');
+      zoomOn = true;
+    } else {
+      resetZoom();
     }
-  });
-
-  viewer.addEventListener('mouseleave', function () {
-    if (overlay.classList.contains('hide')) { return; }
-    setView(startIndex);
-    prevIndex = startIndex;
   });
 
 })();

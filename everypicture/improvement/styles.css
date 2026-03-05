@@ -18,7 +18,7 @@ img {
 }
 
 .stage {
-  width: 1200px;
+  width: 1250px;
   height: 750px;
   padding: 22px;
   background: #1a1a1a;
@@ -105,16 +105,17 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 24px;
+  z-index: 999;
 }
 
 .overlay.hide { display: none; }
 
 .panel {
-  width: 1000px;
+  width: 1100px;
   background: #151515;
   border: 1px solid rgba(255,255,255,0.16);
   border-radius: 14px;
-  padding: 16px;
+  padding: 60px 16px 16px 16px;
   position: relative;
 }
 
@@ -128,22 +129,60 @@ footer {
   border-radius: 10px;
   padding: 10px 12px;
   cursor: pointer;
+  z-index: 5;
+}
+
+.close:hover,
+.close:focus {
+  background: rgba(255,255,255,0.14);
+  outline: none;
 }
 
 .viewer {
   width: 100%;
-  height: 560px;
+  height: 520px;
   background: #0b0b0b;
   border-radius: 12px;
   overflow: hidden;
-  margin-top: 18px;
-  cursor: ew-resize;
+  margin-top: 0;
+  position: relative;
+  cursor: zoom-in;
 }
 
 .viewer img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+}
+
+.viewer img.zoomed {
+  transform: scale(2);
+  cursor: zoom-out;
+}
+
+/* side buttons added for improvements */
+.nav-side {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  z-index: 4;
+}
+
+.prev-side { left: 12px; }
+.next-side { right: 12px; }
+
+.nav-side:hover,
+.nav-side:focus {
+  background: rgba(0,0,0,0.6);
+  outline: none;
 }
 
 figcaption {

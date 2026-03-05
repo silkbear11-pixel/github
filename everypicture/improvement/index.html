@@ -7,7 +7,6 @@
 
   <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -46,7 +45,7 @@
     </section>
 
     <footer>
-      <p class="footer-note">Click an image to open. Move your mouse over the large image to explore.</p>
+      <p class="footer-note">Click an image to open. Use Prev and Next to change images. Click the large image to zoom.</p>
     </footer>
   </main>
 
@@ -56,15 +55,19 @@
 
       <figure>
         <div class="viewer" id="viewer">
+          <button class="nav-side prev-side" id="prev" type="button">Prev</button>
           <img id="bigimg" src="" alt="">
+          <button class="nav-side next-side" id="next" type="button">Next</button>
         </div>
 
         <figcaption>
           <p id="cap"></p>
-          <p class="tip" id="tip">Tip: Move your mouse left to right on the image.</p>
+          <p class="tip" id="tip">Tip: Click the image to zoom. Click again to reset.</p>
         </figcaption>
       </figure>
     </div>
   </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
