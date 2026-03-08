@@ -1,6 +1,19 @@
 (function () {
   'use strict';
 
+  const volumeSlider = document.querySelector('#volume');
+  let masterVolume = 0.7;
+
+  if (volumeSlider) {
+    volumeSlider.addEventListener('input', function () { //input
+      masterVolume = volumeSlider.value / 100;
+    });
+  }
+
+  // Question: Is using the "input" event listener for the volume slider okay for this class? I saw other optional approaches online (like "change" or different methods), but I kept it simple and used "input" so the volume updates while the user drags the slider.
+
+  //Question: When I move on from home page to game page, the volume resets to its original value. How do I fix it in js?
+
   const startBtn = document.querySelector('#start');
 
   if (startBtn) {
@@ -42,7 +55,6 @@
     passBtn.addEventListener('click', function () {
       if (gameOver === false) {
         switchPlayer();
-        status.textContent = `It is ${gameData.players[gameData.index]}'s turn.`;
       }
     });
 
@@ -92,6 +104,7 @@
                             <p>P1: ${gameData.score[0]}</p>
                             <p>P2: ${gameData.score[1]}</p>`;
     }
+
   }
 
 })();

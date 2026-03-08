@@ -13,6 +13,7 @@ body {
   margin: 0 auto;
   overflow: hidden;
   border: 1px solid #000;
+  position: relative;
 }
 
 /* Top bar */
@@ -192,4 +193,26 @@ body {
   margin: 0 0 10px 0;
   font-size: 18px;
   line-height: 1.6;
+}
+
+/* Audio UI */
+.audio-ui {
+  position: absolute;
+  right: 24px;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 18px;
+  padding: 10px 14px;
+}
+
+.audio-ui label {
+  font-size: 18px;
+}
+
+.audio-ui input[type="range"] {
+  width: 160px;
 }
