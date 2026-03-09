@@ -22,16 +22,18 @@
     });
   }
 
+  const die1El = document.querySelector('#die1');
+  const die2El = document.querySelector('#die2');
+
   const game = document.querySelector('#game');
   const scoreBox = document.querySelector('#score');
   const status = document.querySelector('#status');
   const rollBtn = document.querySelector('#roll');
   const passBtn = document.querySelector('#pass');
 
-  if (game && scoreBox && status && rollBtn && passBtn) {
+  if (game && scoreBox && status && rollBtn && passBtn && die1El && die2El) {
 
     const gameData = {
-      dice: ['1die.jpg', '2die.jpg', '3die.jpg', '4die.jpg', '5die.jpg', '6die.jpg'],
       players: ['player 1', 'player 2'],
       score: [0, 0],
       roll1: 0,
@@ -63,8 +65,8 @@
       gameData.roll2 = Math.floor(Math.random() * 6) + 1;
       gameData.rollSum = gameData.roll1 + gameData.roll2;
 
-      game.innerHTML = `<img src="images/${gameData.dice[gameData.roll1 - 1]}" alt="die one">
-                        <img src="images/${gameData.dice[gameData.roll2 - 1]}" alt="die two">`;
+      die1El.setAttribute('data-face', gameData.roll1);
+      die2El.setAttribute('data-face', gameData.roll2);
 
       if (gameData.rollSum === 2) {
         status.textContent = 'Snake Eye! Score reset to 0.';

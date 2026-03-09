@@ -97,14 +97,76 @@ body {
   align-items: center;
 }
 
-.diceholder img {
+/* Dice */
+.die {
   width: 110px;
-  height: auto;
-  display: block;
+  height: 110px;
   background: #fff;
   border: 2px solid #000;
   border-radius: 18px;
-  padding: 12px;
+  position: relative;
+}
+
+/* Dots */
+.dot {
+  width: 14px;
+  height: 14px;
+  background: #000;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0;
+}
+
+/* Dot positions (3x3 grid) */
+.d1 { left: 20px; top: 20px; }
+.d2 { left: 48px; top: 20px; }
+.d3 { left: 76px; top: 20px; }
+
+.d4 { left: 20px; top: 48px; }
+.d5 { left: 48px; top: 48px; }
+.d6 { left: 76px; top: 48px; }
+
+.d7 { left: 20px; top: 76px; }
+.d8 { left: 48px; top: 76px; }
+.d9 { left: 76px; top: 76px; }
+
+/* Faces */
+.die[data-face="1"] .d5 { opacity: 1; }
+
+.die[data-face="2"] .d1,
+.die[data-face="2"] .d9 { opacity: 1; }
+
+.die[data-face="3"] .d1,
+.die[data-face="3"] .d5,
+.die[data-face="3"] .d9 { opacity: 1; }
+
+.die[data-face="4"] .d1,
+.die[data-face="4"] .d3,
+.die[data-face="4"] .d7,
+.die[data-face="4"] .d9 { opacity: 1; }
+
+.die[data-face="5"] .d1,
+.die[data-face="5"] .d3,
+.die[data-face="5"] .d5,
+.die[data-face="5"] .d7,
+.die[data-face="5"] .d9 { opacity: 1; }
+
+.die[data-face="6"] .d1,
+.die[data-face="6"] .d3,
+.die[data-face="6"] .d4,
+.die[data-face="6"] .d6,
+.die[data-face="6"] .d7,
+.die[data-face="6"] .d9 { opacity: 1; }
+
+/* 2D swap animation */
+.swapping {
+  animation: swap 0.35s ease-in-out;
+}
+
+@keyframes swap {
+  0%   { transform: scale(1); opacity: 1; }
+  50%  { transform: scale(0.92); opacity: 0.55; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 /* Start button */
