@@ -5,14 +5,17 @@
   let masterVolume = 0.7;
 
   if (volumeSlider) {
-    volumeSlider.addEventListener('input', function () { //input
+    volumeSlider.addEventListener('input', function () {
       masterVolume = volumeSlider.value / 100;
     });
   }
 
-  // Question: Is using the "input" event listener for the volume slider okay for this class? I saw other optional approaches online (like "change" or different methods), but I kept it simple and used "input" so the volume updates while the user drags the slider.
+  //reduce the html to 1. Make a section for each page. so when start is pressed, the homepage becomes none. Try to keep the volume mixer floated or outside the page, so it doesnt get effected by script.
 
-  //Question: When I move on from home page to game page, the volume resets to its original value. How do I fix it in js?
+  //The pop-up screen can be inside the section(game screen) for none again. Or put it as another section and work on that. 
+
+  //probability -> javascript. HTML is content, so having 9 dice span is not correct. 
+
 
   const startBtn = document.querySelector('#start');
 
@@ -31,7 +34,7 @@
   const rollBtn = document.querySelector('#roll');
   const passBtn = document.querySelector('#pass');
 
-  if (game && scoreBox && status && rollBtn && passBtn && die1El && die2El) {
+  // if (game && scoreBox && status && rollBtn && passBtn && die1El && die2El) {
 
     const gameData = {
       players: ['player 1', 'player 2'],
@@ -107,6 +110,6 @@
                             <p>P2: ${gameData.score[1]}</p>`;
     }
 
-  }
+  // }
 
 })();
