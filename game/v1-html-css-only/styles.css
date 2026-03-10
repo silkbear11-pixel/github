@@ -15,97 +15,138 @@ body {
   border: 1px solid #000;
 }
 
+/* Top bar */
 .topbar {
   height: 90px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
   border-bottom: 1px solid #000;
 }
 
 .topbar h1 {
-  flex: 1;
   margin: 0;
+  font-size: 44px;
   text-align: center;
-  font-size: 36px;
+  flex: 1;
 }
 
+/* Equal width nav buttons to keep title centered */
+.navbtn {
+  width: 180px;
+  text-align: center;
+}
+
+/* Button style */
 .pill {
   display: inline-block;
   padding: 14px 28px;
-  border-radius: 18px;
+  border-radius: 22px;
   background: #d9d9d9;
   color: #000;
   text-decoration: none;
-  font-size: 28px;
-  margin-left: 20px;
+  font-size: 30px;
   border: 1px solid #000;
 }
 
+/* Main */
+.main {
+  height: 660px;
+  padding: 28px;
+}
+
+/* Table */
 .tablewrap {
-  height: 320px;
+  height: 330px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 30px;
+  padding-top: 18px;
 }
 
-.table {
-  width: 760px;
-  height: 260px;
-  background: #58a85f;
-  border: 1px solid #000;
-  border-radius: 50%;
+.table.casino {
+  width: 980px;
+  height: 280px;
+  background: #5b3a2b;
+  border: 2px solid #000;
+  border-radius: 70px;
+  padding: 18px;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.35);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.table.casino::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #2f8b4a;
+  border: 2px solid #000;
+  border-radius: 55px;
+  position: relative;
+}
+
+/* Content above the felt */
+.table.casino > * {
+  position: absolute;
+}
+
+/* Dice placeholders */
 .diceholder {
   display: flex;
-  gap: 30px;
+  gap: 40px;
 }
 
 .die {
-  width: 90px;
-  height: 90px;
+  width: 110px;
+  height: 110px;
   background: #fff;
-  border: 1px solid #000;
+  border: 2px solid #000;
+  border-radius: 18px;
 }
 
+/* Start button */
 .bigstart {
-  font-size: 40px;
-  padding: 18px 60px;
+  font-size: 44px;
+  padding: 18px 70px;
 }
 
+/* Bottom row */
 .bottomrow {
-  height: 240px;
+  height: 260px;
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 0 20px;
+  justify-content: space-between;
+  gap: 30px;
+  padding-top: 10px;
 }
 
+/* Score box (smaller fonts) */
 .scorebox {
-  width: 300px;
+  width: 340px;
   height: 220px;
   border: 1px solid #000;
-  padding: 10px 20px;
+  padding: 12px 20px;
 }
 
 .scorebox h2 {
   margin: 0;
   text-align: center;
-  font-size: 40px;
+  font-size: 44px;
   border-bottom: 1px solid #000;
   padding-bottom: 10px;
 }
 
 .scorebox p {
-  font-size: 36px;
-  margin: 24px 0;
+  font-size: 34px;
+  margin: 18px 0;
   text-align: center;
 }
 
+/* Message (smaller guide text) */
 .messagebox {
   flex: 1;
   height: 220px;
@@ -115,34 +156,38 @@ body {
 }
 
 .status {
-  font-size: 44px;
   margin: 0;
+  font-size: 48px;
   text-align: center;
+  line-height: 1.15;
 }
 
+/* Actions */
 .actionbox {
-  width: 300px;
+  width: 340px;
   height: 220px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 30px;
   align-items: center;
+  gap: 26px;
 }
 
 .actionbtn {
-  width: 240px;
+  width: 300px;
   text-align: center;
-  margin-left: 0;
+  font-size: 40px;
+  padding: 16px 0;
 }
 
+/* Rules */
 .rules {
-  padding: 20px;
+  margin-top: 10px;
 }
 
 .rules h2 {
   margin: 0 0 10px 0;
-  font-size: 40px;
+  font-size: 44px;
 }
 
 .rules p {
