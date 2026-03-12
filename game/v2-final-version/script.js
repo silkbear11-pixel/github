@@ -1,7 +1,6 @@
 (function () {
   'use strict';
 
-  // volume control
   const volumeSlider = document.querySelector('#volume');
   let masterVolume = 0.7;
 
@@ -13,36 +12,47 @@
       masterVolume = savedVolume / 100;
     }
 
+    if (bgm) {
+      bgm.volume = masterVolume;
+    }
+
+    if (diceSound) {
+      diceSound.volume = masterVolume;
+    }
+
     volumeSlider.addEventListener('input', function () {
       masterVolume = volumeSlider.value / 100;
       localStorage.setItem('pigVolume', volumeSlider.value);
+
+      if (bgm) {
+        bgm.volume = masterVolume;
+      }
+
+      if (diceSound) {
+        diceSound.volume = masterVolume;
+      }
     });
   }
 
-  // page sections
   const stage = document.querySelector('.stage');
   const home = document.querySelector('#home');
   const game = document.querySelector('#game');
   const popup = document.querySelector('#popup');
 
-  // buttons
   const startBtn = document.querySelector('#start');
   const goHomeBtn = document.querySelector('#goHome');
   const resetBtn = document.querySelector('#reset');
   const yesResetBtn = document.querySelector('#yesReset');
   const noResetBtn = document.querySelector('#noReset');
 
-  // dice
   const die1El = document.querySelector('#die1');
   const die2El = document.querySelector('#die2');
 
-  // game display
   const scoreBox = document.querySelector('#score');
   const status = document.querySelector('#status');
   const rollBtn = document.querySelector('#roll');
   const passBtn = document.querySelector('#pass');
 
-  // game data
   const gameData = {
     players: ['player 1', 'player 2'],
     score: [0, 0],
@@ -53,17 +63,14 @@
     gameEnd: 30
   };
 
-  // game state
   let gameOver = false;
 
-  // score display
   function showCurrentScore() {
     scoreBox.innerHTML = `<h2>Score</h2>
                           <p><span class="p1-label">P1:</span> <span class="score-num">${gameData.score[0]}</span></p>
                           <p><span class="p2-label">P2:</span> <span class="score-num">${gameData.score[1]}</span></p>`;
   }
 
-  // reset game
   function resetRound() {
     gameData.score = [0, 0];
     gameData.roll1 = 0;
@@ -81,7 +88,6 @@
     status.textContent = `It is ${gameData.players[gameData.index]}'s turn.`;
   }
 
-  // switch player
   function switchPlayer(message) {
     if (gameData.index === 0) {
       gameData.index = 1;
@@ -96,12 +102,18 @@
     }
   }
 
-  // roll dice
   function throwDice() {
     let iteration = Math.floor(Math.random() * 6) + 1;
     let counter = 0;
     let die1;
     let die2;
+
+    if (diceSound) {
+      diceSound.pause();
+      diceSound.currentTime = 0;
+      diceSound.volume = masterVolume;
+      diceSound.play();
+    }
 
     die1El.classList.remove('hidden');
     die2El.classList.remove('hidden');
@@ -117,6 +129,11 @@
       } else {
         clearInterval(diceInterval);
 
+        if (diceSound) {
+          diceSound.pause();
+          diceSound.currentTime = 0;
+        }
+
         gameData.roll1 = die1;
         gameData.roll2 = die2;
         gameData.rollSum = die1 + die2;
@@ -129,7 +146,7 @@
         }
 
         if (die1 === 1 || die2 === 1) {
-          switchPlayer('Rolled a 1. Turn ends.');
+          switchPlayer('Rolled 1. Turn ends.');
           return;
         }
 
@@ -146,13 +163,11 @@
     }, 250);
   }
 
-  // starting screen setup
   die1El.classList.add('hidden');
   die2El.classList.add('hidden');
   stage.classList.add('home-screen');
   showCurrentScore();
 
-  // start button
   if (startBtn) {
     startBtn.addEventListener('click', function () {
       home.classList.add('hidden');
@@ -163,10 +178,15 @@
       stage.classList.remove('home-screen');
       stage.classList.add('game-screen');
       resetRound();
+
+      if (bgm) {
+        bgm.volume = masterVolume;
+        bgm.currentTime = 0;
+        bgm.play();
+      }
     });
   }
 
-  // home button
   if (goHomeBtn) {
     goHomeBtn.addEventListener('click', function () {
       home.classList.remove('hidden');
@@ -178,34 +198,49 @@
       stage.classList.add('home-screen');
       die1El.classList.add('hidden');
       die2El.classList.add('hidden');
+
+      if (bgm) {
+        bgm.pause();
+        bgm.currentTime = 0;
+      }
+
+      if (diceSound) {
+        diceSound.pause();
+        diceSound.currentTime = 0;
+      }
     });
   }
 
-  // reset popup open
   if (resetBtn) {
     resetBtn.addEventListener('click', function () {
       popup.classList.remove('hidden');
     });
   }
 
-  // reset yes button
   if (yesResetBtn) {
     yesResetBtn.addEventListener('click', function () {
       popup.classList.add('hidden');
       stage.classList.remove('home-screen');
       stage.classList.add('game-screen');
       resetRound();
+
+      if (bgm) {
+        bgm.volume = masterVolume;
+      }
+
+      if (diceSound) {
+        diceSound.pause();
+        diceSound.currentTime = 0;
+      }
     });
   }
 
-  // reset no button
   if (noResetBtn) {
     noResetBtn.addEventListener('click', function () {
       popup.classList.add('hidden');
     });
   }
 
-  // roll button
   if (rollBtn) {
     rollBtn.addEventListener('click', function () {
       if (!gameOver) {
@@ -214,7 +249,6 @@
     });
   }
 
-  // pass button
   if (passBtn) {
     passBtn.addEventListener('click', function () {
       if (!gameOver) {

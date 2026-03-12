@@ -120,20 +120,21 @@ header button.hidden {
 .rules {
   width: 930px;
   margin-left: 55px;
+  margin-top: -8px;
   padding-right: 180px;
 }
 
 .rules h2 {
-  margin: 0 0 14px 0;
+  margin: 0 0 12px 0;
   font-size: 30px;
   line-height: 1.1;
   font-weight: 700;
 }
 
 .rules p {
-  margin: 0 0 18px 0;
+  margin: 0 0 14px 0;
   font-size: 14px;
-  line-height: 1.35;
+  line-height: 1.25;
 }
 
 .rules p:last-child {
