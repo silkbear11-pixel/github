@@ -1,4 +1,6 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -7,274 +9,388 @@ body {
   background: #fff;
 }
 
+/* screen */
 .stage {
   width: 1200px;
   height: 750px;
   margin: 0 auto;
-  overflow: hidden;
   border: 1px solid #000;
   position: relative;
+  background: #f1f1f1;
+  overflow: hidden;
 }
 
-/* Top bar */
-.topbar {
+.hidden {
+  display: none;
+}
+
+/* header */
+header {
   height: 90px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
   border-bottom: 1px solid #000;
+  background: #f1f1f1;
 }
 
-.topbar h1 {
+header h1 {
   margin: 0;
   font-size: 44px;
   text-align: center;
   flex: 1;
+  font-weight: 700;
 }
 
-.navbtn {
+header button {
   width: 180px;
-  text-align: center;
-}
-
-/* Buttons */
-.pill {
-  display: inline-block;
-  padding: 14px 28px;
+  height: 56px;
   border-radius: 22px;
   background: #d9d9d9;
   color: #000;
-  text-decoration: none;
-  font-size: 30px;
-  border: 1px solid #000;
+  font-size: 28px;
+  border: 1px solid #555;
   cursor: pointer;
 }
 
-.main {
-  height: 660px;
-  padding: 28px;
+header button.hidden {
+  visibility: hidden;
+  display: block;
 }
 
-/* Casino table */
-.tablewrap {
-  height: 330px;
+/* table area */
+.table-area {
+  width: 100%;
+  height: 340px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding-top: 18px;
 }
 
-.table.casino {
+/* brown table */
+.dice-area {
   width: 980px;
   height: 280px;
-  background: #5b3a2b;
+  background: #875439;
   border: 2px solid #000;
   border-radius: 70px;
-  padding: 18px;
-  box-shadow: 0 10px 18px rgba(0,0,0,0.35);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.table-felt {
-  width: 100%;
-  height: 100%;
-  background: #2f8b4a;
-  border: 2px solid #000;
-  border-radius: 55px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Dice area */
-.diceholder {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Dice */
-.die {
-  width: 110px;
-  height: 110px;
-  background: #fff;
-  border: 2px solid #000;
-  border-radius: 18px;
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.25);
   position: relative;
 }
 
-/* Dots */
+/* green inner felt */
+.dice-area::before {
+  content: "";
+  position: absolute;
+  top: 34px;
+  left: 34px;
+  right: 34px;
+  bottom: 34px;
+  background: #3e9f45;
+  border-radius: 52px;
+}
+
+/* home section */
+#home {
+  width: 100%;
+  height: 320px;
+  position: relative;
+}
+
+/* start button */
+#start {
+  position: absolute;
+  left: 50%;
+  top: -221px;
+  transform: translateX(-50%);
+  width: 260px;
+  height: 78px;
+  border-radius: 24px;
+  background: #d9d9d9;
+  color: #000;
+  font-size: 40px;
+  border: 1px solid #555;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* rules section */
+.rules {
+  width: 930px;
+  margin-left: 55px;
+  padding-right: 180px;
+}
+
+.rules h2 {
+  margin: 0 0 14px 0;
+  font-size: 30px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.rules p {
+  margin: 0 0 18px 0;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.rules p:last-child {
+  margin-bottom: 0;
+}
+
+/* game section */
+#game {
+  width: 100%;
+  height: 320px;
+  position: relative;
+}
+
+/* score box */
+#score {
+  position: absolute;
+  left: 55px;
+  top: 55px;
+  width: 310px;
+  height: 220px;
+  border: 1px solid #555;
+  border-radius: 16px;
+  background: #fff;
+}
+
+#score h2 {
+  margin: 0 24px;
+  text-align: center;
+  font-size: 40px;
+  border-bottom: 1px solid #555;
+  padding: 16px 0 14px 0;
+  font-weight: 700;
+  color: #333;
+}
+
+#score p {
+  font-size: 34px;
+  margin: 0;
+  text-align: center;
+  padding: 20px 0;
+  color: #000;
+}
+
+.p1-label {
+  color: #2f6fd6;
+}
+
+.p2-label {
+  color: #d64545;
+}
+
+.score-num {
+  color: #000;
+}
+
+/* status text */
+#status {
+  position: absolute;
+  left: 430px;
+  top: 150px;
+  width: 330px;
+  margin: 0;
+  font-size: 44px;
+  text-align: center;
+  line-height: 1.15;
+}
+
+/* roll and pass buttons */
+.controls {
+  position: absolute;
+  right: 48px;
+  top: 55px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 18px;
+}
+
+#roll,
+#pass {
+  width: 100%;
+  height: 78px;
+  border-radius: 24px;
+  background: #d9d9d9;
+  color: #000;
+  font-size: 40px;
+  border: 1px solid #555;
+  cursor: pointer;
+}
+
+/* dice */
+.die {
+  width: 100px;
+  height: 100px;
+  background: #efefef;
+  border: 2px solid #000;
+  border-radius: 18px;
+  position: absolute;
+  top: 88px;
+  z-index: 1;
+}
+
+#die1 {
+  left: 50%;
+  transform: translateX(-110%);
+}
+
+#die2 {
+  left: 50%;
+  transform: translateX(10%);
+}
+
+/* dice dots */
 .dot {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   background: #000;
   border-radius: 50%;
   position: absolute;
   opacity: 0;
 }
 
-/* Dot positions (3x3 grid) */
-.d1 { left: 20px; top: 20px; }
-.d2 { left: 48px; top: 20px; }
-.d3 { left: 76px; top: 20px; }
+.d1 {
+  left: 18px;
+  top: 18px;
+}
 
-.d4 { left: 20px; top: 48px; }
-.d5 { left: 48px; top: 48px; }
-.d6 { left: 76px; top: 48px; }
+.d2 {
+  right: 18px;
+  top: 18px;
+}
 
-.d7 { left: 20px; top: 76px; }
-.d8 { left: 48px; top: 76px; }
-.d9 { left: 76px; top: 76px; }
+.d3 {
+  left: 18px;
+  top: 41px;
+}
 
-/* Faces */
-.die[data-face="1"] .d5 { opacity: 1; }
+.d4 {
+  left: 50%;
+  top: 41px;
+  transform: translateX(-50%);
+}
+
+.d5 {
+  right: 18px;
+  top: 41px;
+}
+
+.d6 {
+  left: 18px;
+  bottom: 18px;
+}
+
+.d7 {
+  right: 18px;
+  bottom: 18px;
+}
+
+.die[data-face="1"] .d4 {
+  opacity: 1;
+}
 
 .die[data-face="2"] .d1,
-.die[data-face="2"] .d9 { opacity: 1; }
+.die[data-face="2"] .d7 {
+  opacity: 1;
+}
 
 .die[data-face="3"] .d1,
-.die[data-face="3"] .d5,
-.die[data-face="3"] .d9 { opacity: 1; }
+.die[data-face="3"] .d4,
+.die[data-face="3"] .d7 {
+  opacity: 1;
+}
 
 .die[data-face="4"] .d1,
-.die[data-face="4"] .d3,
-.die[data-face="4"] .d7,
-.die[data-face="4"] .d9 { opacity: 1; }
+.die[data-face="4"] .d2,
+.die[data-face="4"] .d6,
+.die[data-face="4"] .d7 {
+  opacity: 1;
+}
 
 .die[data-face="5"] .d1,
-.die[data-face="5"] .d3,
-.die[data-face="5"] .d5,
-.die[data-face="5"] .d7,
-.die[data-face="5"] .d9 { opacity: 1; }
+.die[data-face="5"] .d2,
+.die[data-face="5"] .d4,
+.die[data-face="5"] .d6,
+.die[data-face="5"] .d7 {
+  opacity: 1;
+}
 
 .die[data-face="6"] .d1,
+.die[data-face="6"] .d2,
 .die[data-face="6"] .d3,
-.die[data-face="6"] .d4,
+.die[data-face="6"] .d5,
 .die[data-face="6"] .d6,
-.die[data-face="6"] .d7,
-.die[data-face="6"] .d9 { opacity: 1; }
-
-/* 2D swap animation */
-.swapping {
-  animation: swap 0.35s ease-in-out;
+.die[data-face="6"] .d7 {
+  opacity: 1;
 }
 
-@keyframes swap {
-  0%   { transform: scale(1); opacity: 1; }
-  50%  { transform: scale(0.92); opacity: 0.55; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-/* Start button */
-.bigstart {
-  font-size: 44px;
-  padding: 18px 70px;
-}
-
-/* Bottom row */
-.bottomrow {
-  height: 260px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-  padding-top: 10px;
-}
-
-/* Score box smaller */
-.scorebox {
-  width: 340px;
-  height: 220px;
-  border: 1px solid #000;
-  padding: 12px 20px;
-}
-
-.scorebox h2 {
-  margin: 0;
-  text-align: center;
-  font-size: 44px;
-  border-bottom: 1px solid #000;
-  padding-bottom: 10px;
-}
-
-.scorebox p {
-  font-size: 34px;
-  margin: 18px 0;
-  text-align: center;
-}
-
-/* Guide text smaller */
-.messagebox {
-  flex: 1;
-  height: 220px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.status {
-  margin: 0;
-  font-size: 48px;
-  text-align: center;
-  line-height: 1.15;
-}
-
-/* Action buttons */
-.actionbox {
-  width: 340px;
-  height: 220px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 26px;
-}
-
-.actionbtn {
-  width: 300px;
-  text-align: center;
-  font-size: 40px;
-  padding: 16px 0;
-}
-
-/* Rules */
-.rules {
-  margin-top: 10px;
-}
-
-.rules h2 {
-  margin: 0 0 10px 0;
-  font-size: 44px;
-}
-
-.rules p {
-  margin: 0 0 10px 0;
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-/* Audio UI */
+/* volume mixer */
 .audio-ui {
   position: absolute;
-  right: 24px;
+  right: 48px;
   bottom: 18px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: #fff;
-  border: 1px solid #000;
-  border-radius: 18px;
-  padding: 10px 14px;
+  width: 300px;
+  padding: 8px 14px 10px 14px;
+  border: 1px solid #555;
+  border-radius: 20px;
+  background: #e7e7e7;
+  text-align: center;
+  z-index: 3;
 }
 
 .audio-ui label {
-  font-size: 18px;
+  display: block;
+  margin: 0 0 4px 0;
+  font-size: 16px;
 }
 
 .audio-ui input[type="range"] {
-  width: 160px;
+  width: 100%;
+  display: block;
+}
+
+/* reset popup */
+#popup {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 20px;
+  padding: 28px;
+  text-align: center;
+  z-index: 10;
+}
+
+#popup h2 {
+  margin: 0 0 12px 0;
+  font-size: 34px;
+}
+
+#popup p {
+  margin: 0 0 20px 0;
+  font-size: 22px;
+}
+
+#yesReset,
+#noReset {
+  width: 120px;
+  height: 50px;
+  border-radius: 18px;
+  background: #d9d9d9;
+  color: #000;
+  font-size: 24px;
+  border: 1px solid #000;
+  cursor: pointer;
+  margin: 0 6px;
 }
