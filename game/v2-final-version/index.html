@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game of Pig</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <main class="stage">
+
+    <!-- header page -->
+    <header>
+      <button id="goHome" class="hidden">Home</button>
+      <h1>The Dice Game</h1>
+      <button id="reset" class="hidden">Reset</button>
+    </header>
+
+    <!-- dice table page -->
+    <section class="table-area">
+      <section class="dice-area">
+
+        <!-- This code below represents each dot position in the dice. -->
+        <section class="die hidden" id="die1" data-face="1">
+          <!-- Starts from top to below: top left, top right, mid left, center, mid right, bot left, bot right -->
+          <span class="dot d1"></span>
+          <span class="dot d2"></span>
+          <span class="dot d3"></span>
+          <span class="dot d4"></span>
+          <span class="dot d5"></span>
+          <span class="dot d6"></span>
+          <span class="dot d7"></span>
+        </section>
+
+        <section class="die hidden" id="die2" data-face="1">
+          <span class="dot d1"></span>
+          <span class="dot d2"></span>
+          <span class="dot d3"></span>
+          <span class="dot d4"></span>
+          <span class="dot d5"></span>
+          <span class="dot d6"></span>
+          <span class="dot d7"></span>
+        </section>
+
+      </section>
+    </section>
+
+    <!-- home page -->
+    <section id="home">
+      <button id="start">Start!</button>
+
+      <section class="rules">
+        <h2>The Dice Game Rules</h2>
+        <p>1. Choose a player number between two people. </p></br>
+        <p>2. When you press start, a random player will get to roll the dice first.</p></br>
+        <p>3. Roll the dice and decide if you want to risk to roll again or pass the turn to be safe.</p></br>
+        <p>4. If a player rolls a one from one of the dice, the player loses rights to roll instant and the other player gets to roll.</p></br>
+        <p>5. If a player rolls two ones, that player's score gets set to 0 and the other player receives the chance to roll. </p>
+        <p>6. When the total score reach 30 or above, you win the game!</p>
+      </section>
+    </section>
+
+    <!-- game page -->
+    <section id="game" class="hidden">
+      <section id="score">
+        <h2>Score</h2>
+        <p><span class="p1-label">P1:</span> <span class="score-num">0</span></p>
+        <p><span class="p2-label">P2:</span> <span class="score-num">0</span></p>
+      </section>
+
+      <p id="status">Press Roll to begin.</p>
+
+      <section class="controls">
+        <button id="roll">Roll</button>
+        <button id="pass">Pass</button>
+      </section>
+    </section>
+
+    <!-- audio files -->
+    <audio id="diceSound" src="audio/dice.mp3"></audio>
+    <audio id="bgm" src="audio/bgm.mp3" loop></audio>
+
+    <!-- volume page -->
+    <section class="audio-ui">
+      <label for="volume">Volume</label>
+      <input type="range" id="volume" min="0" max="100" value="70">
+    </section>
+
+    <!-- popup page -->
+    <section id="popup" class="hidden">
+      <section class="popup-box">
+        <h2>Reset Game?</h2>
+        <p>Do you really want to reset the game?</p>
+        <button id="yesReset">Yes</button>
+        <button id="noReset">No</button>
+      </section>
+    </section>
+
+  </main>
+
+</body>
+</html>
