@@ -26,30 +26,39 @@ body {
 
 /* header */
 header {
-  height: 90px;
-  display: flex;
+  height: 115px;
+  display: grid;
+  grid-template-columns: 320px 1fr 320px;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 24px;
+  padding: 0 20px;
   border-bottom: 1px solid #000;
   background: #f1f1f1;
+  position: relative;
+}
+
+.left-buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: flex-start;
 }
 
 header h1 {
   margin: 0;
-  font-size: 44px;
+  font-size: 54px;
   text-align: center;
-  flex: 1;
   font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 header button {
-  width: 180px;
-  height: 56px;
-  border-radius: 22px;
+  width: 150px;
+  height: 68px;
+  border-radius: 24px;
   background: #d9d9d9;
   color: #000;
-  font-size: 28px;
+  font-size: 30px;
   border: 1px solid #555;
   cursor: pointer;
 }
@@ -59,10 +68,32 @@ header button.hidden {
   display: block;
 }
 
+.header-audio {
+  width: 100%;
+  max-width: 300px;
+  justify-self: end;
+  padding: 8px 14px 10px 14px;
+  border: 1px solid #555;
+  border-radius: 22px;
+  background: #e7e7e7;
+  text-align: center;
+}
+
+.header-audio label {
+  display: block;
+  margin: 0 0 6px 0;
+  font-size: 17px;
+}
+
+.header-audio input[type="range"] {
+  width: 100%;
+  display: block;
+}
+
 /* table area */
 .table-area {
   width: 100%;
-  height: 340px;
+  height: 315px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -103,7 +134,7 @@ header button.hidden {
 #start {
   position: absolute;
   left: 50%;
-  top: -221px;
+  top: -200px;
   transform: translateX(-50%);
   width: 260px;
   height: 78px;
@@ -121,7 +152,7 @@ header button.hidden {
   width: 930px;
   margin-left: 55px;
   margin-top: -8px;
-  padding-right: 180px;
+  padding-right: 120px;
 }
 
 .rules h2 {
@@ -333,31 +364,6 @@ header button.hidden {
   opacity: 1;
 }
 
-/* volume mixer */
-.audio-ui {
-  position: absolute;
-  right: 48px;
-  bottom: 18px;
-  width: 300px;
-  padding: 8px 14px 10px 14px;
-  border: 1px solid #555;
-  border-radius: 20px;
-  background: #e7e7e7;
-  text-align: center;
-  z-index: 3;
-}
-
-.audio-ui label {
-  display: block;
-  margin: 0 0 4px 0;
-  font-size: 16px;
-}
-
-.audio-ui input[type="range"] {
-  width: 100%;
-  display: block;
-}
-
 /* reset popup */
 #popup {
   position: absolute;
@@ -394,4 +400,19 @@ header button.hidden {
   border: 1px solid #000;
   cursor: pointer;
   margin: 0 6px;
+}
+
+/* sources link on home page only */
+.site-footer {
+  position: absolute;
+  right: 55px;
+  bottom: 12px;
+  z-index: 3;
+}
+
+.site-footer a {
+  color: #000;
+  font-size: 18px;
+  text-decoration: underline;
+  font-weight: 700;
 }

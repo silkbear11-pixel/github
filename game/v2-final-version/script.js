@@ -2,6 +2,9 @@
   'use strict';
 
   const volumeSlider = document.querySelector('#volume');
+  const bgm = document.querySelector('#bgm');
+  const diceSound = document.querySelector('#diceSound');
+
   let masterVolume = 0.7;
 
   if (volumeSlider) {
